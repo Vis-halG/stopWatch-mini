@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Timer.css";
+import "./styles/Timer.css";
 
 function Timer() {
   const [time, setTime] = useState({ hr: 0, min: 0, sec: 0, msec: 0 });
