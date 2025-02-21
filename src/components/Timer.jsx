@@ -1,18 +1,5 @@
 import { useState, useEffect } from "react";
-import "./styles/Timer.css";
-
-const imgLinks = [
-  "https://res.cloudinary.com/dwtn2kajc/image/upload/v1739426711/zero_cvmixq.png",
-  "https://res.cloudinary.com/dwtn2kajc/image/upload/v1739426710/one_josesm.png",
-  "https://res.cloudinary.com/dwtn2kajc/image/upload/v1739426711/two_ta0jlr.png",
-  "https://res.cloudinary.com/dwtn2kajc/image/upload/v1739426711/three_eprh7n.png",
-  "https://res.cloudinary.com/dwtn2kajc/image/upload/v1739426711/four_toycdk.png",
-  "https://res.cloudinary.com/dwtn2kajc/image/upload/v1739426710/five_bohdcc.png",
-  "https://res.cloudinary.com/dwtn2kajc/image/upload/v1739426711/six_whnvm9.png",
-  "https://res.cloudinary.com/dwtn2kajc/image/upload/v1739426710/seven_etjdxo.png",
-  "https://res.cloudinary.com/dwtn2kajc/image/upload/v1739426710/eight_lnjvlq.png",
-  "https://res.cloudinary.com/dwtn2kajc/image/upload/v1739426710/nine_pdjizm.png"
-];
+import "./Timer.css";
 
 function Timer() {
   const [time, setTime] = useState({ hr: 0, min: 0, sec: 0, msec: 0 });
@@ -42,23 +29,19 @@ function Timer() {
     setTime({ hr: 0, min: 0, sec: 0, msec: 0 });
   };
 
-  const getImgSrc = (value) => imgLinks[Math.floor(value)];
+  const formatTime = (value) => value.toString().padStart(2, "0");
 
   return (
     <div className="timer-container">
       <section className="timer-box">
         <div className="timer-display">
-          <img src={getImgSrc(time.hr / 10)} alt="hour tens" />
-          <img src={getImgSrc(time.hr % 10)} alt="hour ones" />
+          <span>{formatTime(time.hr)}</span>
           <span>:</span>
-          <img src={getImgSrc(time.min / 10)} alt="minute tens" />
-          <img src={getImgSrc(time.min % 10)} alt="minute ones" />
+          <span>{formatTime(time.min)}</span>
           <span>:</span>
-          <img src={getImgSrc(time.sec / 10)} alt="second tens" />
-          <img src={getImgSrc(time.sec % 10)} alt="second ones" />
+          <span>{formatTime(time.sec)}</span>
           <span>:</span>
-          <img src={getImgSrc(time.msec / 10)} alt="millisecond tens" />
-          <img src={getImgSrc(time.msec % 10)} alt="millisecond ones" />
+          <span>{formatTime(time.msec)}</span>
         </div>
         <div className="timer-controls">
           <button onClick={() => setRunning(true)} className="start-button">Start</button>
