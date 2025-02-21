@@ -7,120 +7,6 @@
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
-  }
-  
-  .timer-box {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .timer-display {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .timer-display span {
-    font-size: 2rem;
-    margin: 0 10px;
-  }
-  
-  .timer-display img {
-    width: 50px; /* Set width */
-    height: auto; /* Automatically adjust height to maintain aspect ratio */
-  }
-  
-  .timer-controls {
-    display: flex;
-    justify-content: space-around;
-    gap: 10px;
-  }
-  
-  .timer-controls button {
-    font-size: 1rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .timer-controls button:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .start-button {
-    background-color: #28a745;
-  }
-  
-  .stop-button {
-    background-color: #dc3545;
-  }
-  
-  .reset-button {
-    background-color: #ffc107;
-  }
-  
-  /* Mobile Styles */
-  @media (max-width: 768px) {
-    .timer-box {
-      padding: 15px;
-    }
-  
-    .timer-display span {
-      font-size: 1.5rem;
-    }
-  
-    .timer-display img {
-      width: 40px; /* Adjusted image size for tablets */
-    }
-  
-    .timer-controls {
-      flex-direction: column;
-      gap: 15px;
-    }
-  
-    .timer-controls button {
-      font-size: 1.2rem;
-      padding: 12px 25px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .timer-display {
-      flex-direction: column;
-    }
-  
-    .timer-display img {
-      width: 30px; /* Adjusted image size for mobile */
-    }
-  
-    .timer-display span {
-      font-size: 1.2rem;
-    }
-  
-    .timer-controls button {
-      font-size: 1rem;
-      padding: 10px 20px;
-    }
-  }
-  .timer-display img {
-    width: 60px;
-    height: 80px; /* Adjust according to your need */
-    object-fit: contain;
-}
-/* General Styles */
-.timer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
     padding: 10px;
 }
 
@@ -128,9 +14,10 @@
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     max-width: 90%;
+    width: 400px;
 }
 
 .timer-display {
@@ -147,15 +34,48 @@
 }
 
 .timer-display img {
-    width: 60px;
-    height: 80px;
+    width: 50px;
+    height: auto;
     object-fit: contain;
 }
 
-/* Mobile Styles */
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.timer-controls button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.timer-controls button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.start-button {
+    background-color: #28a745;
+}
+
+.stop-button {
+    background-color: #dc3545;
+}
+
+.reset-button {
+    background-color: #ffc107;
+}
+
+/* Tablet Styles */
 @media (max-width: 768px) {
     .timer-box {
-        padding: 12px;
+        padding: 15px;
     }
 
     .timer-display span {
@@ -163,12 +83,11 @@
     }
 
     .timer-display img {
-        width: 35px;
-        height: 50px;
+        width: 40px;
+        height: auto;
     }
 
     .timer-controls {
-        display: flex;
         flex-direction: column;
         gap: 10px;
     }
@@ -179,19 +98,21 @@
     }
 }
 
+/* Mobile Styles */
 @media (max-width: 480px) {
     .timer-box {
         padding: 10px;
+        width: 100%;
     }
 
     .timer-display {
-        flex-direction: row;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     .timer-display img {
-        width: 90px;
-        height: 45px;
+        width: 30px;
+        height: auto;
     }
 
     .timer-display span {
@@ -208,5 +129,3 @@
         padding: 10px 18px;
     }
 }
-
-  
